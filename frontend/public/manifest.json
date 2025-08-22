@@ -1,0 +1,62 @@
+{
+  "short_name": "Nexus AI",
+  "name": "Nexus Image Gen",
+  "description": "Create amazing images with AI",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "maskable_icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#121212",
+  "background_color": "#121212",
+  "orientation": "portrait",
+  "categories": ["utilities", "productivity", "photo"],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshot2.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Create Image",
+      "short_name": "Create",
+      "description": "Generate a new image",
+      "url": "/generate",
+      "icons": [{ "src": "shortcut-create.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Gallery",
+      "short_name": "Gallery",
+      "description": "View your images",
+      "url": "/gallery",
+      "icons": [{ "src": "shortcut-gallery.png", "sizes": "192x192" }]
+    }
+  ]
+}

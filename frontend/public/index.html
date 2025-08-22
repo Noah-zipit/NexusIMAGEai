@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#121212" />
+    <meta
+      name="description"
+      content="Nexus Image Gen - Create amazing images with AI"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Nexus Image Gen</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #121212;
+        color: #ffffff;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #121212;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+      
+      #splash-logo {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #6a00ff 0%, #9500ff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 10px rgba(106, 0, 255, 0.5), 0 0 20px rgba(106, 0, 255, 0.3);
+      }
+      
+      #splash-subtitle {
+        font-size: 1rem;
+        color: #b3b3b3;
+        margin-bottom: 2rem;
+      }
+      
+      #splash-spinner {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      
+      .splash-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        animation: pulse 1.5s infinite ease-in-out;
+      }
+      
+      .splash-dot:nth-child(1) {
+        background-color: #6a00ff;
+        animation-delay: 0s;
+      }
+      
+      .splash-dot:nth-child(2) {
+        background-color: #00bfff;
+        animation-delay: 0.2s;
+      }
+      
+      .splash-dot:nth-child(3) {
+        background-color: #ff00bf;
+        animation-delay: 0.4s;
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(0.5);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      
+      #toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="splash-screen">
+      <div id="splash-logo">Nexus</div>
+      <div id="splash-subtitle">Image Gen</div>
+      <div id="splash-spinner">
+        <div class="splash-dot"></div>
+        <div class="splash-dot"></div>
+        <div class="splash-dot"></div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <div id="toast-container"></div>
+    <script>
+      // Hide splash screen after app loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var splashScreen = document.getElementById('splash-screen');
+          if (splashScreen) {
+            splashScreen.style.opacity = '0';
+            setTimeout(function() {
+              splashScreen.style.display = 'none';
+            }, 300);
+          }
+        }, 1000); // Adjust delay as needed
+      });
+    </script>
+  </body>
+</html>
